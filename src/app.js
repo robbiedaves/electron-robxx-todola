@@ -26,3 +26,21 @@ const osMap = {
   linux: "Linux"
 };
 
+
+function sideNavClick(element) {
+  element.style.color="red";
+  var navTrigger = document.getElementById("nav-trigger");
+  navTrigger.click();
+}
+
+
+var sideNavs = document.getElementsByClassName("nav-side-item")
+var i;
+for (i=0; i<sideNavs.length; i++) {
+  var nav = sideNavs[i];
+  nav.addEventListener("click", function(event) {
+    sideNavClick(event.target)
+  })
+}
+
+

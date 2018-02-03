@@ -57,6 +57,13 @@ app.on("ready", () => {
    //mainWindow.loadURL('file://' + __dirname + '/newpage.html')
   })
 
+  ipcMain.on('link-clicked', (event, arg) => {
+    alert(arg);
+    // mainWindow.loadURL(arg);
+   mainWindow.loadURL(`file://${__dirname}/newpage.html`)
+   //mainWindow.loadURL('file://' + __dirname + '/newpage.html')
+  })
+
 });
 
 app.on("window-all-closed", () => {
