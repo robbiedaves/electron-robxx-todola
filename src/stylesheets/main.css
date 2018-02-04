@@ -63,15 +63,18 @@ nav a:hover {
 }
 
 .site-wrap {
-  min-width: 100%;
+  /* min-width: 100%; */
   min-height: 100%;
   background-color: #fff;
   position: relative;
   top: 0;
   bottom: 100%;
   left: 160px;
+  /* right: -200px; */
   z-index: 1;
   padding: 4em;
+  overflow-wrap: normal;
+  /* overflow-x: auto; */
   /* background-image: linear-gradient(135deg,
                     rgb(254,255,255) 0%,
                     rgb(221,241,249) 35%,
@@ -102,15 +105,19 @@ label[for="nav-trigger"] {
 
 .nav-trigger:checked ~ .site-wrap {
   left: 360px;
+  width: calc(100% - 500px);
   box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
 }
 
 .nav-trigger:not(:checked) ~ .site-wrap {
+  width: calc(100% - 300px);
   box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
 }
 
 .nav-trigger + label, .site-wrap {
-  transition: left 0.2s;
+  /* transition: left 0.2s; */
+  transition: 0.2s;
+  /* transition: width 0.2s; */
 }
 
 
@@ -125,9 +132,11 @@ label[for="nav-trigger"] {
   margin-left: 160px; /* Same as the width of the sidenav */
   font-size: 28px; /* Increased text to enable scrolling */
   padding: 0px 0px;
+  overflow-x: visible;
+  min-height: 100%;
 }
 
-@media screen and (max-height: 450px) {
+/* @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
-}
+} */
